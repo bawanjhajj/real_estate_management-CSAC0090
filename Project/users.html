@@ -1,0 +1,459 @@
+﻿<?php
+//Step1
+ $db = mysqli_connect('localhost','root','','r_e_m')
+ or die('Error connecting to MySQL server.');
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/users/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/users/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+  
+  
+  
+    <div id="base" class="" >
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u634" class="ax_default heading_1">
+        <div id="u634_div" class=""></div>
+        <div id="u634_text" class="text ">
+          <p><span>REAL ESTATE MANAGEMENT</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u635" class="ax_default link_button">
+        <div id="u635_div" class=""></div>
+        <div id="u635_text" class="text ">
+          <p><span>Logout</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u636" class="ax_default label">
+        <div id="u636_div" class=""></div>
+        <div id="u636_text" class="text ">
+          <p><span>Department</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Droplist) -->
+      <div id="u637" class="ax_default droplist">
+        <div id="u637_div" class=""></div>
+        <select id="u637_input" class="u637_input">
+          <option class="u637_input_option" value="All">All</option>
+          <option class="u637_input_option" value="Sales">Sales</option>
+          <option class="u637_input_option" value="Registration">Registration</option>
+          <option class="u637_input_option" value="Technology">Technology</option>
+        </select>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u638" class="ax_default heading_3">
+        <div id="u638_div" class=""></div>
+        <div id="u638_text" class="text ">
+          <p><span>USERS</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u639" class="ax_default" data-left="577" data-top="208" data-width="200" data-height="22">
+
+        <!-- Unnamed (Group) -->
+        <div id="u640" class="ax_default" data-left="577" data-top="208" data-width="200" data-height="22">
+
+          <!-- Unnamed (Group) -->
+          <div id="u641" class="ax_default" data-left="577" data-top="208" data-width="200" data-height="22">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u642" class="ax_default shape1">
+              <div id="u642_div" class=""></div>
+              <div id="u642_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+
+            <!-- Search Field (Text Field) -->
+            <div id="u643" class="ax_default text_field1" data-label="Search Field">
+              <div id="u643_div" class=""></div>
+              <input id="u643_input" type="text" value="Search..." class="u643_input" maxlength="128"/>
+            </div>
+          </div>
+
+          <!-- Unnamed (Image) -->
+          <div id="u644" class="ax_default image1">
+            <img id="u644_img" class="img " src="images/users/u644.png"/>
+            <div id="u644_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u645" class="ax_default image1">
+          <img id="u645_img" class="img " src="images/users/u645.png"/>
+          <div id="u645_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- usertable (Table) -->
+      <div id="u646" class="ax_default" data-label="usertable">
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u647" class="ax_default table_cell">
+          <img id="u647_img" class="img " src="images/users/u647.png"/>
+          <div id="u647_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- User ID (Table Cell) -->
+        <div id="u648" class="ax_default table_cell" data-label="User ID">
+          <img id="u648_img" class="img " src="images/users/user_id_u648.png"/>
+          <div id="u648_text" class="text ">
+            <p><span>User ID</span></p>
+          </div>
+        </div>
+
+        <!-- First Name (Table Cell) -->
+        <div id="u649" class="ax_default table_cell" data-label="First Name">
+          <img id="u649_img" class="img " src="images/users/first_name_u649.png"/>
+          <div id="u649_text" class="text ">
+            <p><span>First Name</span></p>
+          </div>
+        </div>
+
+        <!-- Last Name (Table Cell) -->
+        <div id="u650" class="ax_default table_cell" data-label="Last Name">
+          <img id="u650_img" class="img " src="images/users/last_name_u650.png"/>
+          <div id="u650_text" class="text ">
+            <p><span>Last Name</span></p>
+          </div>
+        </div>
+
+        <!-- access Type (Table Cell) -->
+        <div id="u651" class="ax_default table_cell" data-label="access Type">
+          <img id="u651_img" class="img " src="images/users/access_type_u651.png"/>
+          <div id="u651_text" class="text ">
+            <p><span>Access Type</span></p>
+          </div>
+        </div>
+
+        <!-- Department (Table Cell) -->
+        <div id="u652" class="ax_default table_cell" data-label="Department">
+          <img id="u652_img" class="img " src="images/users/department_u652.png"/>
+          <div id="u652_text" class="text ">
+            <p><span>Department</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u653" class="ax_default table_cell">
+          <img id="u653_img" class="img " src="images/users/u653.png"/>
+          <div id="u653_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u654" class="ax_default table_cell">
+          <img id="u654_img" class="img " src="images/users/u654.png"/>
+          <div id="u654_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u655" class="ax_default table_cell">
+          <img id="u655_img" class="img " src="images/users/u655.png"/>
+          <div id="u655_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u656" class="ax_default table_cell">
+          <img id="u656_img" class="img " src="images/users/u656.png"/>
+          <div id="u656_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u657" class="ax_default table_cell">
+          <img id="u657_img" class="img " src="images/users/u657.png"/>
+          <div id="u657_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u658" class="ax_default table_cell">
+          <img id="u658_img" class="img " src="images/users/u658.png"/>
+          <div id="u658_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u659" class="ax_default table_cell">
+          <img id="u659_img" class="img " src="images/users/u653.png"/>
+          <div id="u659_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u660" class="ax_default table_cell">
+          <img id="u660_img" class="img " src="images/users/u654.png"/>
+          <div id="u660_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u661" class="ax_default table_cell">
+          <img id="u661_img" class="img " src="images/users/u655.png"/>
+          <div id="u661_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u662" class="ax_default table_cell">
+          <img id="u662_img" class="img " src="images/users/u656.png"/>
+          <div id="u662_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u663" class="ax_default table_cell">
+          <img id="u663_img" class="img " src="images/users/u657.png"/>
+          <div id="u663_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u664" class="ax_default table_cell">
+          <img id="u664_img" class="img " src="images/users/u658.png"/>
+          <div id="u664_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u665" class="ax_default table_cell">
+          <img id="u665_img" class="img " src="images/users/u665.png"/>
+          <div id="u665_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u666" class="ax_default table_cell">
+          <img id="u666_img" class="img " src="images/users/u666.png"/>
+          <div id="u666_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u667" class="ax_default table_cell">
+          <img id="u667_img" class="img " src="images/users/u667.png"/>
+          <div id="u667_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u668" class="ax_default table_cell">
+          <img id="u668_img" class="img " src="images/users/u668.png"/>
+          <div id="u668_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u669" class="ax_default table_cell">
+          <img id="u669_img" class="img " src="images/users/u669.png"/>
+          <div id="u669_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Table Cell) -->
+        <div id="u670" class="ax_default table_cell">
+          <img id="u670_img" class="img " src="images/users/u670.png"/>
+          <div id="u670_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u671" class="ax_default checkbox">
+        <label id="u671_input_label" for="u671_input" style="position: absolute; left: 0px;">
+          <img id="u671_img" class="img " src="images/users/u671.svg"/>
+          <div id="u671_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u671_input" type="checkbox" value="checkbox"/>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u672" class="ax_default checkbox">
+        <label id="u672_input_label" for="u672_input" style="position: absolute; left: 0px;">
+          <img id="u672_img" class="img " src="images/users/u672.svg"/>
+          <div id="u672_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u672_input" type="checkbox" value="checkbox"/>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u673" class="ax_default checkbox">
+        <label id="u673_input_label" for="u673_input" style="position: absolute; left: 0px;">
+          <img id="u673_img" class="img " src="images/users/u673.svg"/>
+          <div id="u673_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u673_input" type="checkbox" value="checkbox"/>
+      </div>
+
+      <!-- Unnamed (Checkbox) -->
+      <div id="u674" class="ax_default checkbox">
+        <label id="u674_input_label" for="u674_input" style="position: absolute; left: 0px;">
+          <img id="u674_img" class="img " src="images/users/u674.svg"/>
+          <div id="u674_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </label>
+        <input id="u674_input" type="checkbox" value="checkbox"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u675" class="ax_default primary_button">
+        <div id="u675_div" class=""></div>
+        <div id="u675_text" class="text ">
+          <p><span>View</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u676" class="ax_default primary_button">
+        <div id="u676_div" class=""></div>
+        <div id="u676_text" class="text ">
+          <p><span>Edit</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) 
+      <div id="u677" class="ax_default primary_button">
+        <div id="u677_div" class=""></div>
+        <div id="u677_text" class="text ">
+          <p><span>Delete</span></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Rectangle) 
+      <div id="u678" class="ax_default primary_button">
+        <div id="u678_div" class=""></div>
+        <div id="u678_text" class="text ">
+          <p><span>Create</span></p>
+        </div>
+      </div> -->
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u679" class="ax_default primary_button">
+        <div id="u679_div" class=""></div>
+        <div id="u679_text" class="text ">
+          <p><span>Search</span></p>
+        </div>
+      </div>
+
+      <!-- Tab Label 3 (Rectangle) -->
+      <div id="u680" class="ax_default box_3" data-label="Tab Label 3" selectiongroup="My Button Group">
+        <div id="u680_div" class=""></div>
+        <div id="u680_text" class="text ">
+          <p><span>Users</span></p>
+        </div>
+      </div>
+
+      <!-- Tab Label 2 (Rectangle) -->
+      <div id="u681" class="ax_default box_3" data-label="Tab Label 2" selectiongroup="My Button Group">
+        <div id="u681_div" class=""></div>
+        <div id="u681_text" class="text ">
+          <p><span>My Profile</span></p>
+        </div>
+      </div>
+
+      <!-- Tab Label 1 (Rectangle) -->
+      <div id="u682" class="ax_default box_3" data-label="Tab Label 1" selectiongroup="My Button Group">
+        <div id="u682_div" class=""></div>
+        <div id="u682_text" class="text ">
+          <p><span>Welcome</span></p>
+        </div>
+      </div>
+
+      <!-- Tab Label 4 (Rectangle) -->
+      <div id="u683" class="ax_default box_3" data-label="Tab Label 4" selectiongroup="My Button Group">
+        <div id="u683_div" class=""></div>
+        <div id="u683_text" class="text ">
+          <p><span>Access Request</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>
