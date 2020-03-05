@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+/* loginpage */
+form {
+    border: 1px solid #f1f1f1;
+    margin-top: 5%;
+    //margin-bottom: 50%;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+#profileform {
+    border: 1px solid #f1f1f1;
+    margin-top: 5%;
+    //margin-bottom: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#addform {
+    border: 1px solid #f1f1f1;
+    margin-top: 5%;
+    //margin-bottom: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#editform {
+    border: 1px solid #f1f1f1;
+    margin-top: 5%;
+    //margin-bottom: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+
+/* Full-width inputs */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 100) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+/* loginpage END */
+
+
+
+@media only screen and (min-width: 768px) {
+    /* welcomepage */
+
+    .REM {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 0px 10%;
+    }
+
+    .ruser {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 10% 15%;
+    }
+
+    .logoutlink {
+
+        float: right;
+
+        margin-top: -38%;
+        margin-right: 2%;
+        /* Same as the width of the sidenav */
+        font-size: 25px;
+        /* Increased text to enable scrolling */
+        font-style: oblique;
+    }
+
+    .menu {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        opacity: 100%;
+
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    .menu a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 25px;
+        color: lightcyan;
+        display: block;
+    }
+
+    .menu a:hover {
+        background-color: #ccc;
+    }
+
+    .menu a.sidebar {
+        background-color: #5D6D7E;
+        color: white;
+    }
+
+    /* welcomepage END */
+
+    /* profilepage */
+
+    .reqbtn {
+        float: right;
+        margin-top: -20%;
+    }
+
+    /*usertable*/
+
+    .table-responsive {
+        margin-top: -15%;
+    }
+
+    .bt1 {
+        margin-left: 40%;
+        padding-right: 50%;
+    }
+
+    .bt2 {
+
+        margin-left: 40%;
+        padding-right: 50%;
+    }
+
+    .bt3 {
+
+        margin-left: 40%;
+        padding-right: 50%;
+    }
+
+    .bt4 {
+        margin-left: 40%;
+        padding-right: 50%;
+    }
+
+
+    h1 {
+        padding-left: 15%;
+        padding-top: 1%;
+        text-align: left;
+
+
+    }
+
+    .usercontainer {
+        padding-left: 15%;
+        padding-right: 5%;
+        padding-top: 12%;
+
+    }
+
+
+
+}
