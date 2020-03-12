@@ -178,44 +178,173 @@ span.psw {
         margin-top: -15%;
     }
 
-    .bt1 {
-        margin-left: 40%;
-        padding-right: 50%;
-    }
-
-    .bt2 {
-
-        margin-left: 40%;
-        padding-right: 50%;
-    }
-
-    .bt3 {
-
-        margin-left: 40%;
-        padding-right: 50%;
-    }
-
-    .bt4 {
-        margin-left: 40%;
-        padding-right: 50%;
-    }
+}
 
 
-    h1 {
-        padding-left: 15%;
-        padding-top: 1%;
-        text-align: left;
+.btn-group1 {
+    background-color: lightblue;
+    /* Green background */
+    border: 1px solid blue;
+    /* Green border */
+    color: white;
+    /* White text */
 
-
-    }
-
-    .usercontainer {
-        padding-left: 15%;
-        padding-right: 5%;
-        padding-top: 12%;
-
-    }
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: right;
+    /* Float the buttons side by side */
+}
 
 
 
+.btn-group1:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group1:after {
+    content: "";
+    clear: both;
+    display: inline-table;
+}
+
+/* Add a background color on hover */
+.btn-group1:hover {
+    background-color: blue;
+
+}
+
+.btn-group2 {
+    background-color: lightblue;
+    /* Green background */
+    border: 1px solid blue;
+    /* Green border */
+    color: white;
+    /* White text */
+
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: right;
+    /* Float the buttons side by side */
+}
+
+.btn-group2:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group2:after {
+    content: "";
+    clear: both;
+    display: inline-table;
+}
+
+/* Add a background color on hover */
+.btn-group2:hover {
+    background-color: blue;
+
+}
+
+
+h1 {
+    padding-left: 15%;
+    padding-top: 1%;
+    text-align: left;
+
+
+}
+
+.usercontainer {
+    padding-left: 15%;
+    padding-right: 5%;
+    padding-top: 12%;
+
+}
+
+.accesscontainer {
+    padding-left: 15%;
+    padding-right: 5%;
+    padding-top: 12%;
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.reqstatus {
+    float: right;
+    margin-right: -30%;
+}
+
+
+.butn {
+    margin-right: 10%;
+    margin-top: 1%;
+}
+
+.button {
+    float: right;
 }

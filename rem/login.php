@@ -33,26 +33,29 @@ $query = mysqli_query($conn,"SELECT * FROM login WHERE email='$email' AND pass='
 
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>realestatemanagement.com/Login Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="css/rem.css">
-  </head>
-  <body background="img/login.jpg">
-      
-<form id ="loginform" action="login.php" method="POST">
-    <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rem.css">
+</head>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" required>
+<body background="img/login.jpg">
 
-   
-        
-        <input type ="submit" name = "login" value = "LOGIN" class = "btn-login"/>
-    <button onclick="document.location = 'signup.php'">Signup</button>
-    </div>
-      </form>
-    </body>
+    <form id="loginform" action="login.php" method="POST">
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pass" required>
+
+
+
+            <input type="submit" name="login" value="LOGIN" class="btn-login" />
+            <button onclick="document.location = 'signup.php'">Signup</button>
+        </div>
+    </form>
+</body>
+
 </html>

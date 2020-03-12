@@ -89,7 +89,7 @@ mysqli_close($conn);
     </div>
     <div class="reqbtn">
         <input type="submit" name="req" value="Request Elevated Access" class="btn-req" />
-        <label for="addr"><b>Request Pending</b></label>
+
     </div>
     <div class="logoutlink"> <a href="login.php">Logout</a> </div>
 </body>
