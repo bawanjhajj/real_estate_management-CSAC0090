@@ -1,33 +1,54 @@
 <?php  
-include('db_connect.php');
-
-if(isset($_POST["login"])){
+session_start();            //Session Start    
+include('db_connect.php');  //link to Connection file
     
+if(isset($_POST["login"]))  //When click login
+{
+    //Define $user and $pass
+    $email=$_POST['uname'];       //Assign Variable
+    $pass=$_POST['pass'];
+    $access=$_POST['access'];
 
-     //Define $user and $pass
- $email=$_POST['uname'];
- $pass=$_POST['pass'];
+    $query = mysqli_query($conn,"SELECT * FROM login WHERE email='$email' AND pass='$pass'");
 
-$query = mysqli_query($conn,"SELECT * FROM login WHERE email='$email' AND pass='$pass'");
-    
-    
- $rows = mysqli_num_rows($query);
+    $rows = mysqli_num_rows($query);    
+    if($rows != 0)                  //if data exists
+    {
+        while ($row = mysqli_fetch_array($query))
+        {
+           $dbemail = $row['email'];
+            $dbpass = $row['pass'];
+            $dbaccess = $row['access'];
+        }
 
-         if($rows == 1){
-         header("Location: welcome.php"); // Redirecting to other page
- }
-          else if($rows == 2){
- header("Location: welcome2.php"); // Redirecting to other page
- }
-              else if($rows == 3){
- header("Location: welcome3.php"); // Redirecting to other page
- }
- else
- {
- $error = "Username of Password is Invalid";
- }
-
+         $_SESSION['email']=$email;
+         $_SESSION['dbaccess']=$dbaccess;
+         header("Location: welcome2.php");
+//        if($dbemail==$email && $dbaccess =='regular')
+//        {
+//
+//            header("Location: welcome.php");
+//        }
+//
+//        else if($dbemail==$email && $dbaccess =='administrator')
+//        {
+//
+//                header("Location: welcome2.php");
+//        }
+//
+//         else if($dbemail==$email && $dbaccess =='agent')
+//         {
+//
+//             header("Location: welcome3.php");
+//         }
+    }
+    else
+    {
+        echo "access not defined";
+    }
 }
+
+    mysqli_close($conn);
 ?>
 
 
@@ -50,10 +71,11 @@ $query = mysqli_query($conn,"SELECT * FROM login WHERE email='$email' AND pass='
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="pass" required>
 
+            <input type="hidden" name="access" />
 
+            <input type="submit" name="login" value="LOGIN" class="loginbtn" />
 
-            <input type="submit" name="login" value="LOGIN" class="btn-login" />
-            <button onclick="document.location = 'signup.php'">Signup</button>
+            <button id="signupbtn" onclick="document.location = 'signup.php'">Signup</button>
         </div>
     </form>
 </body>
