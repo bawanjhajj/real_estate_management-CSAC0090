@@ -1,8 +1,32 @@
 <?php  
  require('db_connect.php');
+session_start();            //Session Start  
+if(isset($_SESSION['email']))
+{
+    echo "Hello : " . $_SESSION['email'];
+     echo "<br>";
 
-$sql ="SELECT * FROM accessdata LIMIT 10;";  
+$dbaccess = $_SESSION['dbaccess'];
+$usertype= "Regular User";
+if($dbaccess == "agent")
+{
+    $usertype = "Elevated Access User";
+}
+else if($dbaccess == "administrator")
+{
+    $usertype= "Administrator";
+}
+
+else if($dbaccess == "regular")
+{
+    $usertype= "Regular User";
+}
+else{
+    
+}
+$sql ="SELECT * FROM profile LIMIT 10;";  
  $result = mysqli_query($conn,$sql);
+}
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -23,47 +47,65 @@ mysqli_close($conn);
 
 </head>
 
-<body background="img/user.jpg">
+<body background="img/areq.jpg">
 
     <div class="menu">
         <ul>
-            <li><a href="welcome.php" class="sidebar">Welcome</a></li>
+
+            <li><a href="welcome2.php">Welcome</a></li>
             <li><a href="profile.php">My Profile</a></li>
+            <?php
+            if($dbaccess == 'administrator' || $dbaccess == "agent")
+            {
+            ?>
             <li><a href="users.php">Users</a></li>
+            <?php
+            }
+            ?>
+            <?php 
+            if($dbaccess == 'administrator')
+            {
+            ?>
             <li>
                 <a href="access_request.php">Access Requests</a>
             </li>
+            <?php
+            }
+            ?>
         </ul>
-
     </div>
 
+    <form id="selectedRow" method="POST">
+        <input type="hidden" id="selectedId" name="selectedId" value="" />
+    </form>
     <div class="butn">
-        <button id="acceptButton">Accept</button>
-        <button id="declineButton">Decline</button>
+        <button id="accept" formaction="access_request.php" form="selectedRow" type="submit" name="edit">Accept</button>
+        <button id="decline" name="decline" type="submit" form="selectedRow">Decline</button>
     </div>
 
-    <body>
-        <div class="accesscontainer">
-            <h1>ACCESS REQUEST</h1>
-            <div class="table-responsive">
-                <table id="accessdata" class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <td>reqid</td>
-                            <td>fname</td>
-                            <td>lname</td>
-                            <td>dep</td>
-                            <td>reqstatus</td>
-                        </tr>
-                    </thead>
+    <br /><br />
+    <div class="accesscontainer">
+        <h1>Access Request</h1>
 
+        <div class="table-responsive">
+            <table id="profile" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <td>uid</td>
+                        <td>fname</td>
+                        <td>lname</td>
+                        <td>dep</td>
+                        <td>reqstatus</td>
+                    </tr>
+                </thead>
+                <tbody>
                     <?php  
                           while($row = mysqli_fetch_array($result))  
                           {
                                // echoing the fetched data from the database per column names
                                echo '  
                                <tr>
-                                    <td>'.$row["reqid"].'</td>  
+                                    <td>'.$row["uid"].'</td>  
                                     <td>'.$row["fname"].'</td>  
                                     <td>'.$row["lname"].'</td> 
                                      <td>'.$row["dep"].'</td> 
@@ -72,34 +114,36 @@ mysqli_close($conn);
                                ';  
                           }  
                           ?>
-
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
-    </body>
-    <div class="logoutlink">
-        <a href="login.php">Logout</a>
     </div>
+    <div class="logoutlink"> <a href="login.php">Logout</a> </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('#profile').DataTable();
+
+            $('#profile tbody').on('click ', ' tr ', function() {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                    selectedId = "";
+                    document.getElementById("selectedId").value = selectedId;
+                } else {
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+                    selectedId = $(this).find("td:first").html();
+                    document.getElementById("selectedId").value = selectedId;
+                    //console.log(document.getElementById("selectedId").value);
+                }
+            });
+
+            $('#deleteButton').click(function() {
+                table.row('.selected').remove().draw(false);
+            });
+        });
+
+    </script>
 
 </body>
 
 </html>
-<script>
-    $(document).ready(function() {
-        var table = $('#accessdata').DataTable();
-        $('#accessdata tbody').on('click ', ' tr ', function() {
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-            } else {
-                table.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-
-            }
-        });
-
-        $('#acceptButton').click(function() {
-            table.row('.selected').remove().draw(false);
-        });
-    });
-
-</script>

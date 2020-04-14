@@ -1,6 +1,11 @@
 <?php  
  require('db_connect.php');
 session_start();            //Session Start  
+if(isset($_SESSION['email']))
+{
+    echo "Hello : " . $_SESSION['email'];
+     echo "<br>";
+}
 $dbaccess = $_SESSION['dbaccess'];
 $usertype= "Regular User";
 if($dbaccess == "agent")
@@ -11,14 +16,15 @@ else if($dbaccess == "administrator")
 {
     $usertype= "Administrator";
 }
-
 else if($dbaccess == "regular")
 {
     $usertype= "Regular User";
 }
-else{
-    
+else
+{
+    $usertype= "Regular User";
 }
+mysqli_close($conn);
  ?>
 
 <!DOCTYPE html>
@@ -58,7 +64,6 @@ else{
             ?>
         </ul>
     </div>
-
     <div class="REM">
         <h1>REAL ESTATE MANAGEMENT</h1>
     </div>
@@ -66,8 +71,6 @@ else{
     <div class="ruser">
         <h2><?php echo  "Welcome ".$usertype ?></h2>
     </div>
-
-
     <div class="logoutlink">
         <a href="login.php">Logout</a> </div>
 </body>

@@ -24,34 +24,11 @@ if(isset($_POST["login"]))  //When click login
          $_SESSION['email']=$email;
          $_SESSION['dbaccess']=$dbaccess;
          header("Location: welcome2.php");
-//        if($dbemail==$email && $dbaccess =='regular')
-//        {
-//
-//            header("Location: welcome.php");
-//        }
-//
-//        else if($dbemail==$email && $dbaccess =='administrator')
-//        {
-//
-//                header("Location: welcome2.php");
-//        }
-//
-//         else if($dbemail==$email && $dbaccess =='agent')
-//         {
-//
-//             header("Location: welcome3.php");
-//         }
     }
-    else
-    {
-        echo "access not defined";
-    }
+    else{   echo "Access Not Defined";   }
 }
-
-    mysqli_close($conn);
+mysqli_close($conn);
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -66,7 +43,8 @@ if(isset($_POST["login"]))  //When click login
     <form id="loginform" action="login.php" method="POST">
         <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="email" placeholder="Email Address" name="uname" required />
+<!--            <input type="email" pattern=".+@gmail.com" placeholder="Ex. abc@gmail.com" name="uname" required>-->
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="pass" required>

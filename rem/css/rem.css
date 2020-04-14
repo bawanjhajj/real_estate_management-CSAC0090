@@ -1,28 +1,172 @@
-@media all and (max-width: 740px) and (min-width: 400px) {
-    /*id #  && class .*/
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media all and (max-width: 740px) and (min-width: 300px) {
+    /* id #  && class . */
 
     * {
         box-sizing: content-box;
     }
 
+    #loginform {
+        border: 1px solid #f1f1f1;
+        margin-top: 10%;
+        //margin-bottom: 50%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 
+    input[type=email],
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 12px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        box-sizing: content-box;
+    }
+
+    .loginbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        margin: 8px 0;
+        width: 90%;
+    }
+
+    .loginbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    .signupbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: 2px -12px;
+        width: 90%;
+    }
+
+    .signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
 
     #signupform {
-        border: 5px solid #f1f1f1;
-        margin-left: 30%;
+        border: 0px solid #f1f1f1;
+        margin-top: -10%;
+        margin-left: 28%;
         margin-right: 30%;
     }
 
+    #signupbtn {
+        /*login page*/
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        margin: 8px 0;
+        width: 100%;
+    }
+
+    #signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    #cancelbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: 3px -43px;
+        width: 100%;
+    }
+
+    #cancelbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
     #profileform {
-        margin-top: 40%;
-        margin-left: 18%;
-        width: 42%;
+        margin-top: 10%;
+        margin-left: 40%;
+        width: 48%;
+    }
+
+    .editbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: px -43px;
+        width: 20%;
+
+    }
+
+    .editbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 15;
+    }
+
+    .reqbtn {
+        float: right;
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding-bottom: 11px;
+        padding-top: 12px;
+        margin-top: -35px;
+        width: 60%;
+    }
+
+    .reqbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 15;
+    }
+
+    #atype {
+        width: 100%;
+        height: 6%;
+    }
+
+    #atype option {
+        width: 100%;
+        height: 6%;
     }
 
     .REM {
         text-align: center;
         padding-left: 25%;
         padding-top: 40%;
+    }
+
+    h1 {
+        /*users access headings*/
+        padding-top: 1%;
+        //text-shadow: 2px 2px red;
+        color: mediumturquoise;
+        text-align: center;
+
+    }
+
+    .ruser {
+        text-align: center;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 1% 12%;
+        color: mediumturquoise;
     }
 
     .logoutlink {
@@ -34,6 +178,13 @@
         font-style: oblique;
 
     }
+
+    .logoutlink:hover {
+        background-color: #ccc;
+        text-transform: capitalize;
+        font-size: 30;
+    }
+
 
     #addform {
         border: 1px solid #f1f1f1;
@@ -53,78 +204,24 @@
 
     /* loginpage */
 
-    #loginform {
-        border: 1px solid #f1f1f1;
-        margin-top: 10%;
-        //margin-bottom: 50%;
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-
-    input[type=text],
-    input[type=password] {
-        width: auto;
-        padding: 12px 12px;
-        margin: 5px 0;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    .loginbtn {
-        background-color: transparent;
-        text-decoration-color: black;
-        text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
-        width: 80%;
-    }
-
-    #signupbtn {
-        /*login page*/
-        background-color: transparent;
-        text-decoration-color: black;
-        text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
-        width: 80%;
-    }
-
-    .signupbtn {
-        background-color: transparent;
-        text-decoration-color: black;
-        text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
-        width: 140%;
-    }
-
-
-
-    #cancelbtn {
-        background-color: transparent;
-        text-decoration-color: black;
-        text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
-        width: 140%;
-    }
 
     /* Set a style for all buttons */
     button {
+        float: right;
         background-color: transparent;
         text-decoration-color: black;
         text-transform: uppercase;
-        padding: 18px 200px;
-        margin: 8px 0;
-        width: 9%;
-
     }
 
-
+    .butn {
+        float: right;
+        padding: 15%;
+    }
 
     /* Add a hover effect for buttons */
     button:hover {
-        opacity: 0.8;
+        opacity: 0.6;
+        text-shadow: 3%;
     }
 
     /* Extra style for the cancel button (red) */
@@ -155,132 +252,57 @@
     .cancelbtn {
         width: 100%;
     }
-}
 
-/* loginpage END */
-.menu {
-    width: 25%;
-    position: absolute;
-    background-color: transparent;
-    opacity: 100%;
-}
+    /* loginpage END */
+    .menu {
+        width: 40%;
+        position: absolute;
+        background-color: transparent;
+        opacity: 100%;
+    }
 
-.menu a {
-    padding: 5%;
-    font-size: 25px;
-    color: lightcyan;
-}
+    .menu a {
+        padding: 5%;
+        font-size: 25px;
+        color: lightcyan;
+    }
 
-.menu a:hover {
-    background-color: #ccc;
-}
+    .menu a:hover {
+        background-color: #ccc;
+        font-size: 21;
+    }
 
-.menu a. sidebar {
-    background-color: #5D6D7E;
-}
+    .menu a. sidebar {
+        background-color: #5D6D7E;
+    }
 
-/*usertable*/
+    /*usertable*/
 
-/*
-.table-responsive {
-    margin-top: -15%;
-}
-*/
+    .table-responsive {
+        margin-top: 1%;
+    }
 
-}
+    .usercontainer {
+        padding-left: 4%;
+        margin-right: 0.99%;
+        padding-top: 5%;
 
-h1 {
-    /*users access headings*/
-    padding-left: 15%;
-    padding-top: 1%;
-    text-shadow: 2px 2px red;
-    text-align: left;
-}
+    }
 
-.usercontainer {
-    padding-left: 15%;
-    padding-right: 5%;
-    padding-top: 15%;
+    .accesscontainer {
+        padding-left: 4%;
+        margin-right: 0.99%;
+        padding-top: 8%;
+    }
 
 }
 
-.accesscontainer {
-    padding-left: 18%;
-    margin-right: 0.99%;
-    padding-top: 16%;
-}
 
-}
-
-@media (min-width: 768px) {
-
-    ...
-}
-
-@media (min-width: 1024px) {
-
-    ...
-}
-
-@media (min-width: 1200px) {
+@media all and (max-width: 1190px) and (min-width: 750px) {
 
     * {
         box-sizing: content-box
     }
-
-    #signupform {
-        border: 5px solid #f1f1f1;
-        margin-left: 30%;
-        margin-right: 30%;
-    }
-
-    #profileform {
-        border: 1px solid #f1f1f1;
-        margin-top: 5%;
-        //margin-bottom: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
-    }
-
-    .REM {
-        text-align: center;
-        padding-left: 25%;
-        padding-top: 3%;
-        padding-right: 25%;
-    }
-
-    .ruser {
-        padding-left: 20%;
-        padding-right: 30%;
-    }
-
-    .logoutlink {
-        color: black;
-        position: absolute;
-        top: 5%;
-        right: 6%;
-        font-size: 30px;
-        font-style: oblique;
-
-    }
-
-    #addform {
-        border: 1px solid #f1f1f1;
-        margin-top: 5%;
-        //margin-bottom: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
-    }
-
-    #editform {
-        border: 1px solid #f1f1f1;
-        margin-top: 5%;
-        //margin-bottom: 50%;
-        margin-left: 25%;
-        margin-right: 25%;
-    }
-
-    /* loginpage */
 
     #loginform {
         border: 1px solid #f1f1f1;
@@ -290,6 +312,7 @@ h1 {
         margin-right: 33%;
     }
 
+    input[type=email],
     input[type=text],
     input[type=password] {
         width: 100%;
@@ -309,24 +332,168 @@ h1 {
         width: 90%;
     }
 
+    .loginbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
     .signupbtn {
         background-color: transparent;
-        text-decoration-color: black;
+        text-decoration-color: white;
         text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
+        padding: 14px 14px;
+        margin: -10px 2px;
         width: 90%;
     }
 
-    /* Set a style for all buttons */
-    button {
+    .signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    #signupbtn {
+        background-color: transparent;
+        text-decoration-color: white;
+        text-transform: uppercase;
+        padding: 14px 14px;
+        margin: -10px 5px;
+        width: 90%;
+    }
+
+    #signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    #cancelbtn {
         background-color: transparent;
         text-decoration-color: black;
         text-transform: uppercase;
-        padding: 14px 20px;
-        margin: 8px 0;
-        width: 90%;
+        padding: 14px 5px;
+        margin: 12px 15px;
+        width: 92%;
+    }
 
+    #cancelbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+
+    #signupform {
+        border: 1px solid #f1f1f1;
+        margin-top: 1%;
+        margin-bottom: 8%;
+        margin-left: 25%;
+        margin-right: 25%;
+
+    }
+
+    #profileform {
+        border: 1px solid #f1f1f1;
+        margin-top: 2%;
+        //margin-bottom: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .editbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: px -43px;
+        width: 20%;
+
+    }
+
+    .editbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 15;
+    }
+
+    #atype {
+        width: 100%;
+        height: 6%;
+    }
+
+    #atype option {
+        width: 100%;
+        height: 6%;
+    }
+
+    .REM {
+        text-align: center;
+        padding-left: 25%;
+        padding-top: 3%;
+        padding-right: 25%;
+    }
+
+    .ruser {
+        padding-left: 20%;
+        padding-right: 30%;
+        color: mediumturquoise;
+    }
+
+    h1 {
+        /*users access headings*/
+        padding-top: 20%;
+        //text-shadow: 2px 2px red;
+        text-align: right;
+        color: mediumturquoise;
+    }
+
+    .logoutlink {
+        color: black;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        font-size: 30px;
+        font-style: oblique;
+
+    }
+
+    .logoutlink:hover {
+        background-color: #ccc;
+        text-transform: capitalize;
+        font-size: 30;
+    }
+
+    #addform {
+        border: 1px solid #f1f1f1;
+        margin-top: 5%;
+        //margin-bottom: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    #editform {
+        border: 1px solid #f1f1f1;
+        margin-top: 5%;
+        //margin-bottom: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    /* loginpage */
+
+
+    /* Set a style for all buttons */
+    button {
+        float: right;
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+    }
+
+    .butn {
+        float: right;
+        margin: 10%;
     }
 
 
@@ -364,101 +531,402 @@ h1 {
     .cancelbtn {
         width: 100%;
     }
-}
-
-/* loginpage END */
 
 
+    /* loginpage END */
 
-/* welcomepage */
 
-.rem {
-    margin-left: 160px;
-    /* Same as the width of the sidenav */
-    font-size: 28px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10%;
-}
 
-.ruser {
-    margin-left: 160px;
-    /* Same as the width of the sidenav */
-    font-size: 28px;
-    /* Increased text to enable scrolling */
-    padding: 10% 15%;
-}
+    /* welcomepage */
 
-.menu {
-    height: 100%;
-    width: 25%;
-    position: absolute;
-    background-color: transparent;
-    opacity: 100%;
-}
+    .rem {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 0px 10%;
+    }
 
-.menu a {
-    padding: 5%;
-    text-decoration: none;
-    text-transform: inherit;
-    font-size: 25px;
-    color: lightcyan;
-}
+    .ruser {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 10% 15%;
+        color: mediumturquoise;
+    }
 
-.menu a:hover {
-    background-color: #ccc;
-}
+    .menu {
+        width: 25%;
+        position: absolute;
+        background-color: transparent;
+        opacity: 100%;
+    }
 
-.menu a. sidebar {
-    background-color: #5D6D7E;
+    .menu a {
+        padding: 5%;
+        font-size: 25px;
+        color: lightcyan;
+    }
 
-}
+    .menu a:hover {
+        background-color: #ccc;
+    }
 
-/* welcomepage END */
+    .menu a. sidebar {
+        background-color: #5D6D7E;
+    }
 
-/* profilepage */
+    /* welcomepage END */
 
-.reqbtn {
-    float: right;
-    margin-top: -35%;
-}
+    /* profilepage */
 
-/*usertable*/
+    .reqbtn {
+        float: right;
+        margin-top: -35%;
+    }
 
-/*
+    /*usertable*/
+
+    /*
 .table-responsive {
     margin-top: -15%;
 }
 */
+    .usercontainer {
+        padding-left: 15%;
+        padding-right: 5%;
+        padding-top: 15%;
+
+    }
+
+    .accesscontainer {
+        padding-left: 18%;
+        margin-right: 0.99%;
+        padding-top: 16%;
+    }
+
+    .butn {
+        /*acceptdeclinebuttons*/
+        float: right;
+        padding-top: 5%;
+
+    }
 
 }
 
-h1 {
-    /*users access headings*/
-    padding-left: 15%;
-    padding-top: 1%;
-    text-shadow: 2px 2px red;
-    text-align: left;
-}
+@media (min-width: 1200px) {
 
-.usercontainer {
-    padding-left: 15%;
-    padding-right: 5%;
-    padding-top: 15%;
-
-}
-
-.accesscontainer {
-    padding-left: 18%;
-    margin-right: 0.99%;
-    padding-top: 16%;
-}
-
-.butn {
-    /*acceptdeclinebuttons*/
-    float: right;
-    padding-top: 5%;
-
-}
+    * {
+        box-sizing: content-box
+    }
 
 
+
+    #loginform {
+        border: 1px solid #f1f1f1;
+        margin-top: 5%;
+        //margin-bottom: 50%;
+        margin-left: 33%;
+        margin-right: 33%;
+    }
+
+    input[type=email],
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 12px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .loginbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        margin: 8px 0;
+        width: 90%;
+    }
+
+
+    .loginbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+
+    .signupbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        margin: 8px 0;
+        width: 90%;
+    }
+
+    .signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+
+    #signupform {
+        border: 5px solid #f1f1f1;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    #signupbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: px -43px;
+        width: 90%;
+    }
+
+    #signupbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    #cancelbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: px -43px;
+        width: 90%;
+    }
+
+    #cancelbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    #profileform {
+        border: 1px solid #f1f1f1;
+        margin-top: 1%;
+        //margin-bottom: -10%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .editbtn {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 12px 18px;
+        margin: px -43px;
+        width: 20%;
+
+    }
+
+    .editbtn:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+
+    #atype {
+        width: 100%;
+        height: 6%;
+    }
+
+    #atype option {
+        width: 100%;
+        height: 6%;
+    }
+
+    .REM {
+        text-align: center;
+        padding-left: 25%;
+        padding-top: 3%;
+        padding-right: 25%;
+    }
+
+    .ruser {
+        padding-left: 20%;
+        padding-right: 30%;
+    }
+
+    .logoutlink {
+        color: black;
+        position: absolute;
+        top: 2%;
+        right: 11%;
+        font-size: 30px;
+        font-style: oblique;
+    }
+
+    .logoutlink:hover {
+        background-color: #ccc;
+        text-transform: capitalize;
+        font-size: 30;
+    }
+
+    #addform {
+        border: 1px solid #f1f1f1;
+        margin-top: 5%;
+        //margin-bottom: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    #editform {
+        border: 1px solid #f1f1f1;
+        margin-top: 5%;
+        //margin-bottom: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    /* loginpage */
+
+
+    /* Set a style for all buttons */
+    button {
+        background-color: transparent;
+        text-decoration-color: black;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        margin: 8px 0;
+        width: 90%;
+    }
+
+
+
+    /* Add a hover effect for buttons */
+    button:hover {
+        opacity: 0.8;
+        text-transform: uppercase;
+    }
+
+    /* Extra style for the cancel button (red) */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+
+    }
+
+    /* The "Forgot password" text */
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+
+    /* loginpage END */
+    /* welcomepage */
+    .rem {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 0px 10%;
+    }
+
+    .ruser {
+        margin-left: 160px;
+        /* Same as the width of the sidenav */
+        font-size: 28px;
+        /* Increased text to enable scrolling */
+        padding: 10% 15%;
+    }
+
+    .menu {
+        width: 25%;
+        position: absolute;
+        background-color: transparent;
+        opacity: 100%;
+    }
+
+    .menu a {
+        padding: 5%;
+        font-size: 25px;
+        color: lightcyan;
+    }
+
+    .menu a:hover {
+        background-color: #ccc;
+        text-transform: uppercase;
+        font-size: 20;
+    }
+
+    .menu a. sidebar {
+        background-color: #5D6D7E;
+    }
+
+
+
+    /* welcomepage END */
+
+    /* profilepage */
+
+    .reqbtn {
+        float: right;
+        margin-top: -19%;
+        margin-right: 10%;
+    }
+
+    /*usertable*/
+
+
+    /*
+    .table-responsive {
+        margin-top: %;
+    }
+*/
+
+
+    h1 {
+        /*users access headings*/
+        padding-top: 1%;
+        //text-shadow: 2px 2px black;
+        text-align: left;
+    }
+
+    .usercontainer {
+        padding-left: 10%;
+        margin-right: 15%;
+        padding-top: 10%;
+
+    }
+
+    .accesscontainer {
+        padding-left: 12%;
+        margin-right: 10%;
+        padding-top: 10%;
+    }
+
+    .butn {
+        /*acceptdeclinebuttons*/
+        float: right;
+        padding-top: 3%;
+        padding-right: 10%;
+
+    }
 }

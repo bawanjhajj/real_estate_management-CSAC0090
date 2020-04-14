@@ -3,17 +3,15 @@ include('db_connect.php');
 if(isset($_POST["signup"]) && $_POST['g-recaptcha-response']!="")
 {
     
- $secret = '6Lc7--EUAAAAACJ4eYfyIXbjI6FuydVniZ6mr6Gq';
+ $secret = '6Ldk8ugUAAAAADn5jB3Boh6qnkOyhxjUdTfQRYcS';
  $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
  $responseData = json_decode($verifyResponse);
+   // echo $verifyResponse;
  if($responseData->success)
  {
-     echo "";
-      }
-    else
-    {
-        echo "";
-    }
+     echo "reCAPTCHA VARIFIED   ";
+      echo "<br>";
+     
     $email = $_POST['email'];
     $pass = $_POST['pass'];
     $cpass = $_POST['cpass'];
@@ -21,27 +19,36 @@ if(isset($_POST["signup"]) && $_POST['g-recaptcha-response']!="")
     $lname = $_POST['lname'];
     $dob = $_POST['dob'];
 
+if($pass != $cpass)
+{
+    echo "<h3>Password wasn't same as Confirmed Password</h3>";
+}    
+else{
+    $sql = "INSERT INTO signup (email, pass, cpass, fname, lname, dob) VALUES ('$email', '$pass', '$cpass', '$fname', '$lname', '$dob');";
 
+   $sql .= " INSERT INTO login (email, pass) VALUES ('$email', '$pass') ;";
     
-$sql = "INSERT INTO signup (email, pass, cpass, fname, lname, dob) VALUES ('$email', '$pass', '$cpass', '$fname', '$lname', '$dob')";
-
-   $sql2 = "INSERT INTO login (email, pass) VALUES ('$email', '$pass')";
-    
-    $sql3 = "INSERT INTO profile (email, pass, fname, lname, dob) VALUES ('$email', '$pass', '$fname', '$lname', '$dob')";
+    $sql .= " INSERT INTO profile (email, pass, fname, lname, dob) VALUES ('$email', '$pass', '$fname', '$lname', '$dob');";
     
     
-    $result = mysqli_query($conn,$sql);
-    $result = mysqli_query($conn,$sql2);
-     $result = mysqli_query($conn,$sql3);
-    
-    if (!empty($result))
+    $result = mysqli_multi_query($conn,$sql);
+   
+}
+    if ($result == 1)
     {
-        echo "SUBMITTED";
+  
+    echo "  FORM SUBMITTED";
     }
     else
     {
-        echo "NOT SUBMITTED";
-    }
+        echo "FORM IS NOT SUBMITTED";
+        echo "<br>";
+    }    
+ }
+else
+{
+echo "reCAPTCHA IS NOT VARIFIED";
+}
 
 }
 mysqli_close($conn);
@@ -53,6 +60,7 @@ mysqli_close($conn);
 <head>
     <title>realestatemanagement.com/Signup Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/rem.css">
 
     <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
@@ -69,7 +77,7 @@ mysqli_close($conn);
         <form autocomplete="off" id="signupform" action="signup.php" method="post">
             <h1>Signup</h1>
             <label for="em"><b>Email Address</b></label>
-            <input type="text" name="email" placeholder="Email Address" required="required" />
+            <input type="email" name="email" placeholder="Ex: abc@gmail.com" required="required" />
             <label for="p"><b>Password</b></label>
             <input type="password" name="pass" placeholder="Password" required="required" />
             <label for="cp"><b>Confirm Password</b></label>
@@ -90,10 +98,8 @@ mysqli_close($conn);
 
             </script>
 
-            <div class="g-recaptcha" data-sitekey="6Lc7--EUAAAAACJ4eYfyIXbjI6FuydVniZ6mr6Gq"></div>
-            <br />
-
-            <input type="submit" name="signup" value="Signup" class="signupbtn" />
+            <div class="g-recaptcha" data-sitekey="6Ldk8ugUAAAAAHWI_PhZpfGanwoDW_S4CO4jzMd9"></div>
+            <input type="submit" name="signup" value="Signup" id="signupbtn" />
             <button id="cancelbtn" onclick="document.location = 'login.php'">Cancel</button>
         </form>
     </div>

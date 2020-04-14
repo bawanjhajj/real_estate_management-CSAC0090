@@ -1,8 +1,29 @@
 <?php  
- require('db_connect.php');
+session_start();            //Session Start 
+include('db_connect.php');
+if(isset($_SESSION['email']))
+{
+    echo "hello : " . $_SESSION['email'];
+     echo "<br>";
+$query1 ="SELECT * FROM profile WHERE email ='{$_SESSION['email']}'";
+    $result = mysqli_query($conn,$query1) or die(mysqli_error());
+    
+            while ($row1 = mysqli_fetch_array($result))
+            {
+                $email = $row1['email'];
+                $pass = $row1['pass'];
+                $fname = $row1['fname'];
+                $lname = $row1['lname'];
+                $dob = $row1['dob'];
+                $access = $row1['access'];
+                $phone = $row1['phone'];
+                $dep = $row1['dep'];
+                $address = $row1['address'];
+            }
+}
+    else {    echo "Cant Fetch Data";    }
+mysqli_close($conn);
  ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -22,14 +43,32 @@
     <!-- Sidebar -->
     <div class="menu">
         <ul>
-            <li><a href="welcome.php" class="sidebar">Welcome</a></li>
+
+            <li><a href="welcome2.php">Welcome</a></li>
             <li><a href="profile.php">My Profile</a></li>
+            <?php
+            if($dbaccess == 'administrator' || $dbaccess == "agent")
+            {
+            ?>
             <li><a href="users.php">Users</a></li>
+            <a href="add_user.php">Access Requests</a>
+            <?php
+            }
+            ?>
+            <?php 
+            if($dbaccess == 'administrator')
+            {
+            ?>
             <li>
                 <a href="access_request.php">Access Requests</a>
+                <a href="edit_user.php">Access Requests</a>
             </li>
+            <?php
+            }
+            ?>
         </ul>
     </div>
+
     <div class="Edit User">
         <form autocomplete="off" id="addform" action="db_connect.php" method="post">
             <h1>Add User</h1>
@@ -51,19 +90,54 @@
                 });
 
             </script>
-            <b>Date of Birth <input type="text" name="dob" value=<?php echo $dob; ?> id="datepicker" size="30"></b>
 
-            <label for="at"><b>Access Type</b></label>
-            <input type="text" name="at" placeholder="Access Type" value=<?php echo $access; ?> required="required" />
+            <b>Date of Birth <input type="text" name="dob" value=<?php echo $dob; ?> id="datepicker" size="30"></b>
+            <label for="atype"><b>Access Type</b></label>
+            <?php 
+                if($access == "administrator")
+                {       
+            ?>
+            <select name="access" id="atype">
+                <option value="regular">Regular</option>
+                <option value="agent">Elevated Access User</option>
+                <option selected value="administrator">Administrator</option>
+            </select>
+            <?php
+                }
+                else
+                {
+            ?>
+            <input type="text" name="access" placeholder="access" value=<?php echo $access; ?> readonly required="required" />
+            <?php
+                }
+            ?>
             <label for="phone"><b>Phone Number</b></label>
             <input type="text" name="phone" placeholder="Phone Number" value=<?php echo $phone; ?> required="required" />
-            <label for="dept"><b>Department</b></label>
-            <input type="text" name="dept" placeholder="Department" value=<?php echo $dep; ?> required="required" />
+
+            <label for="atype"><b>Department</b></label>
+            <?php 
+                if($access == "administrator"){
+                    
+            ?>
+
+            <select name="dep" id="atype">
+                <option value="sales">Sales</option>
+                <option value="registration">Registration</option>
+                <option selected value="property evaluation">Property Evaluation</option>
+            </select>
+            <?php
+                }
+                else{
+            ?>
+            <input type="text" name="dep" placeholder="department" value=<?php echo $dep; ?> readonly required="required" />
+            <?php
+                }
+            ?>
             <label for="addr"><b>Address</b></label>
             <input type="text" name="addr" placeholder="Address" value=<?php echo $address; ?> required="required" />
 
             <button type="Save" class="btn btn-primary btn-block btn-large">Save</button>
-            <button type="Cancel" class="btn btn-primary btn-block btn-large">Cancel</button>
+            <button id="cancelbtn" onclick="document.location = 'add_user.php'">Cancel</button>
         </form>
     </div>
     <div class="logoutlink"> <a href="login.php">Logout</a> </div>
